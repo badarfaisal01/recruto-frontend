@@ -1,0 +1,7 @@
+{
+  "rewrites": [
+    { "source": "/interview.html", "destination": "/interview.html" },
+    { "source": "/report.html", "destination": "/report.html" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}

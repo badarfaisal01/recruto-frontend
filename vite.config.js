@@ -1,8 +1,18 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import { resolve } from 'path'
 
 export default defineConfig({
   plugins: [react()],
+  build: {
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        interview: resolve(__dirname, 'interview.html'),
+        report: resolve(__dirname, 'report.html')
+      }
+    }
+  },
   server: {
     port: 5173,
     proxy: {
