@@ -11,7 +11,8 @@
 class InterviewController {
     constructor() {
         // Configuration
-        this.apiBaseUrl = 'http://localhost:8001/api';
+        const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+        this.apiBaseUrl = (isLocal ? 'http://localhost:8000' : 'https://badarfaisa1-recruto.hf.space') + '/api';
         this.numQuestions = 5;
         
         // State

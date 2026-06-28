@@ -10,9 +10,10 @@
  */
 
 // ==================== Configuration ====================
+const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
 const CONFIG = {
-    wsUrl: 'ws://localhost:8000/ws/interview',
-    apiUrl: 'http://localhost:8000',
+    wsUrl: (window.location.protocol === 'https:' ? 'wss://' : 'ws://') + (isLocal ? 'localhost:8000' : 'badarfaisa1-recruto.hf.space') + '/ws/interview',
+    apiUrl: isLocal ? 'http://localhost:8000' : 'https://badarfaisa1-recruto.hf.space',
     silenceDelay: 1500,  // ms to wait after AI speaks before re-enabling mic
     faceCheckInterval: 3000,  // ms between face/emotion checks
     maxSilenceLevel: 0.01  // Audio level below which is considered silence

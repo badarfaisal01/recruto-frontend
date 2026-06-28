@@ -416,8 +416,9 @@
 
     <script>
         // ==================== Configuration ====================
+        const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
         const CONFIG = {
-            apiUrl: 'http://localhost:8000'
+            apiUrl: isLocal ? 'http://localhost:8000' : 'https://badarfaisa1-recruto.hf.space'
         };
 
         // ==================== Get Session ID from URL ====================
